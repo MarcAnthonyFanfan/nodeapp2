@@ -19,7 +19,6 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
     host: 'mysql',
     port: '3306',
-    socketPath: '/var/run/mysqld/mysqld.sock',
     user: 'node',
     database: 'nodeapp'
 });
