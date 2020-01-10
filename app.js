@@ -17,7 +17,8 @@ app.use(cookieParser());
 // mysql setup
 var mysql = require('mysql');
 var con = mysql.createConnection({
-    host: 'localhost',
+    host: '127.0.0.1',
+    port: '3306',
     user: 'node',
     database: 'nodeapp'
 });
