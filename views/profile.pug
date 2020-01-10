@@ -1,0 +1,31 @@
+html
+	head
+		title= user.username + "'s Profile"
+		link(rel='stylesheet', href='/css/dashboard.css')
+	body
+		header
+			h1= user.username + "'s Profile"
+			ul
+				li
+					a#home_link(href='/') Feed
+				li
+					a.active#profile_link(href='/users')= 'Users > ' + user.username
+				li(style='float: right;')
+					a.logout_link(href='/logout') Logout
+				li(style='float: right;')
+					a(href='/users/' + current_user.username)
+						u= current_user.username
+		if posts
+			each post in posts
+				section.post
+					h1
+						a.post_author(style='color: #adadad;' href='/users/' + post.username)= post.username
+						span(style='float: right;')
+							- var date = new Date(post.created_at)
+							- var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours()
+							- var am_pm = date.getHours() >= 12 ? "PM" : "AM"
+							- hours = hours < 10 ? "0" + hours : hours
+							- var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
+							- var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()
+							= hours + ":" + minutes + am_pm + ' ' + (date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear()
+					p.post_body= post.body

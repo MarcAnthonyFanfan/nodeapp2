@@ -1,0 +1,26 @@
+html
+	head
+		title Signup
+		link(rel='stylesheet', href='/css/login.css')
+	body
+		form(method='POST' action='')
+			h1 Signup New User
+			.container
+				unless autofocus_password
+					- autofocus_username = 'autofocus'
+				label(for='username')
+					b Username
+				input(id='username_input' type='text' name='username' value=username required autofocus= autofocus_username)
+				label(for='password')
+					b Password
+				input(id='password_input' type='password' name='password' required autofocus= autofocus_password)
+				label(for='password_confirmation')
+					b Confirm Password
+				input(id='password_confirmation_input' type='password' name='password_confirmation' required)
+				if flash_message
+					.flashes
+						= flash_message
+				button(id='submit_button' type='submit') Submit
+				p.boxed_links
+					= "Existing User? "
+					a#login_link(href='/login') Login

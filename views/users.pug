@@ -1,0 +1,23 @@
+html
+	head
+		title All Users
+		link(rel='stylesheet', href='/css/dashboard.css')
+	body
+		header
+			h1 All Users
+			ul
+				li
+					a#home_link(href='/') Feed
+				li
+					a.active#profile_link(href='/users') Users
+				li(style='float: right;')
+					a.logout_link(href='/logout') Logout
+				li(style='float: right;')
+					a(href='/users/' + current_user.username)
+						u= current_user.username
+		if users
+			each user in users
+				section
+					h1
+						a(style='color: #adadad;' href='/users/' + user.username)= user.username
+						span(style='float: right;')= user.number_of_posts + ' Posts'

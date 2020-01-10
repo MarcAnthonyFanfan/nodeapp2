@@ -1,0 +1,5 @@
+node_modules/*
+.vagrant/*
+test/output/*
+*.swp
+pull_request_url.txt

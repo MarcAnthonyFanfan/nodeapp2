@@ -1,0 +1,17 @@
+html
+	head
+		title Profile Not Found
+		link(rel='stylesheet', href='/css/dashboard.css')
+	body
+		header
+			h1 Profile Not Found
+			ul
+				li
+					a#home_link(href='/') Feed
+				li
+					a.active#profile_link(href='/users') Users
+				li(style='float: right;')
+					a.logout_link(href='/logout') Logout
+				li(style='float: right;')
+					a(href='/users/' + current_user.username)
+						u= current_user.username

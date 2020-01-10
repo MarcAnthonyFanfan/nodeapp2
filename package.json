@@ -1,0 +1,26 @@
+{
+  "name": "nodeapp1",
+  "version": "1.0.0",
+  "description": "Simple node web application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcAnthonyFanfan/nodeapp1.git"
+  },
+  "author": "MarcAnthony Fanfan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcAnthonyFanfan/nodeapp1/issues"
+  },
+  "homepage": "https://github.com/MarcAnthonyFanfan/nodeapp1#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "js-sha256": "^0.9.0",
+    "mysql": "^2.17.1",
+    "pug": "^2.0.4"
+  }
+}
